@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import { ReactComponent as SiteLogo } from '../icons/P-Side-Logo-500px.svg';
+import { ReactComponent as SiteLogo } from '../icons/P-Side-Studio-Logo.svg';
 import { Link } from "react-router-dom"
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, SwipeableDrawer } from '@mui/material';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';

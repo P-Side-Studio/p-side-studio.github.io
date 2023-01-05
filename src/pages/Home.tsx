@@ -1,5 +1,5 @@
 import { Box } from "@mui/system";
-import { ReactComponent as SiteLogo } from '../icons/P-Side-Logo-500px.svg';
+import { ReactComponent as SiteLogo } from '../icons/P-Side-Studio-Logo.svg';
 import { Parallax } from 'react-parallax'
 import { Button, Fade, IconButton, SpeedDial, SpeedDialAction, useTheme } from "@mui/material";
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
@@ -37,7 +37,7 @@ export function Home({ id }: HomeProps) {
 
   return (
     <>
-      <Parallax style={{ zIndex: theme.zIndex.drawer + 1 }} blur={5} bgImage="/images/sunset-background.jpg" strength={400} bgImageStyle={{ translate: '0px -200px' }}>
+      <Parallax style={{ zIndex: theme.zIndex.drawer + 1 }} blur={5} bgImage="/images/wholef.png" strength={400} bgImageStyle={{ translate: '0px -200px' }}>
         <Box
           id={id}
           display='flex'
@@ -50,7 +50,7 @@ export function Home({ id }: HomeProps) {
           }}>
           <Fade in timeout={2000} onEntering={() => setShowSocialButtons(true)}>
             <Box ref={ref} width='80%' maxWidth={500} height='60%'>
-              <SiteLogo
+              <SiteLogo style={{filter: "drop-shadow(0px 0px 20px rgb(0 0 0))"}}
                 width="100%"
                 height="100%" />
             </Box>
