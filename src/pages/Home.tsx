@@ -9,11 +9,12 @@ import { BsFacebook } from 'react-icons/bs'
 import { FaTiktok } from 'react-icons/fa'
 import { BsYoutube } from 'react-icons/bs'
 import { BsChevronDown } from "react-icons/bs";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"
 import { APP_BAR_HEIGHT } from '../App'
 import { useSyncPagePath } from "../hooks/useSyncPagePath";
+import { useInView } from "react-intersection-observer";
 
 type HomeProps = {
   id: string,
@@ -29,33 +30,57 @@ export function Home({ id }: HomeProps) {
     { name: 'Youtube', icon: <BsYoutube />, link: 'https://www.youtube.com/channel/UCsBTfAYSvmDnssnp6jnNGDQ' },
   ]
 
+  let backgroundImageIndex = 0
+  const backgroundImages = [
+    "/images/desk.jpg",
+    "/images/piano.jpg",
+    "/images/microphone.jpg",
+    "/images/guitars.jpg",
+    "/images/drumpad.jpg",
+  ]
+
   const [showSocialButtons, setShowSocialButtons] = React.useState<boolean>(false);
   const [showChevron, setShowChevron] = React.useState<boolean>(false);
+  const [backgroundImage, setbackgroundImage] = React.useState<string>(backgroundImages[backgroundImageIndex]);
 
-  const ref = useSyncPagePath(id);
+  const { ref, inView, entry } = useInView()
+  const logoRef = useSyncPagePath(id);
   const theme = useTheme()
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (inView) {
+        backgroundImageIndex++
+        backgroundImageIndex %= backgroundImages.length
+        setbackgroundImage(backgroundImages[backgroundImageIndex])
+      }
+    }, 4200);
+    return () => clearInterval(interval);
+  }, [inView])
 
   return (
     <>
-      <Parallax style={{ zIndex: theme.zIndex.drawer + 1 }} blur={5} bgImage="/images/wholef.png" strength={400} bgImageStyle={{ translate: '0px -200px' }}>
+      <Parallax style={{ zIndex: theme.zIndex.drawer + 1 }} blur={3} bgImage={backgroundImage} strength={400} bgImageStyle={{ translate: '0px -200px' }}>
         <Box
+          ref={ref}
           id={id}
           display='flex'
           alignItems='center'
           justifyContent='center'
           flexDirection='column'
           width='100%'
+          sx={{ backgroundColor: { xs: 'rgb(29 28 23)', md: "rgba(0, 0, 0, 0.80)" } }}
           style={{
             height: `calc(100dvh - ${APP_BAR_HEIGHT}px)`,
           }}>
-          <Fade in timeout={2000} onEntering={() => setShowSocialButtons(true)}>
-            <Box ref={ref} width='80%' maxWidth={500} height='60%'>
-              <SiteLogo style={{filter: "drop-shadow(0px 0px 20px rgb(0 0 0))"}}
-                width="100%"
+          <Fade in timeout={1500} onEntering={() => setShowChevron(true)}>
+            <Box ref={logoRef} width='80%' maxWidth={500} height='60%'>
+              <SiteLogo fill={theme.palette.background.paper}
+                  width="100%"
                 height="100%" />
             </Box>
           </Fade>
-          <Fade in={showSocialButtons} timeout={1500} onEntered={() => setShowChevron(true)}>
+          {/* <Fade in={showSocialButtons} timeout={1500} onEntered={() => setShowChevron(true)}>
             <Box mb={5} alignItems='top' display='flex' gap={1}>
               {socials.map((social) =>
                 <IconButton href={social.link} target="_blank" size={'large'}>
@@ -63,7 +88,7 @@ export function Home({ id }: HomeProps) {
                 </IconButton>
               )}
             </Box>
-          </Fade>
+          </Fade> */}
           <Fade in={showChevron} timeout={2000}>
             <Box
               component={motion.div}
@@ -77,10 +102,9 @@ export function Home({ id }: HomeProps) {
               }}
             >
               <Button
-                color="inherit"
                 component={Link}
                 to='body'>
-                <BsChevronDown fontSize={60} />
+                <BsChevronDown fill={theme.palette.background.paper} fontSize={60} />
               </Button>
             </Box>
           </Fade>
