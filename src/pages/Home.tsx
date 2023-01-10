@@ -36,7 +36,7 @@ export function Home({ id }: HomeProps) {
 
   return (
     <>
-      <Parallax style={{ zIndex: theme.zIndex.drawer + 1 }} strength={400}>
+      <Parallax style={{ zIndex: theme.zIndex.drawer - 1 }} strength={400}>
         <Background>
           <ImageCrossFader
             urls={[
