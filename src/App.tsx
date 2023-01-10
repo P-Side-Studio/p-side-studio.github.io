@@ -4,12 +4,11 @@ import { ThemeProvider } from "@mui/material"
 import { theme } from './theme'
 import { Container, Divider, Box } from "@mui/material"
 import { Home } from "./pages/Home"
-import { Music } from "./pages/Music"
-import { About } from "./pages/About"
-import { Contact } from "./pages/Contact"
+import { Services } from "./pages/Services"
 import { useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
 import LoadingPage from "./components/LoadingPage"
+import { Contact } from "./pages/Contact"
 
 export const APP_BAR_HEIGHT = 80
 
@@ -31,6 +30,15 @@ function App() {
     setLoading(false)
     scrollToLocation()
   }
+
+  // This is a dirty way to wait for images to load, there is no imageloaded callback on the image crossfade npm element which is used within the home page
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+      scrollToLocation()
+    }, 1000);
+  }, [])
+
   function scrollToLocation() {
     let id = location.pathname.split('/').at(-1)
     if (!id) {
@@ -57,12 +65,8 @@ function App() {
             backgroundRepeat: 'no-repeat',
           }}>
           <Container id='body'>
-            <Page title="Music" id="music">
-              <Music onAllImagesLoaded={() => imagesLoaded()} />
-            </Page>
-            <Divider />
-            <Page title="About" id="about">
-              <About />
+            <Page title="Services" id="services">
+              <Services />
             </Page>
             <Divider />
             <Page title="Contact" id="contact">

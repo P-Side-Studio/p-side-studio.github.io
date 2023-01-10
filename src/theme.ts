@@ -19,7 +19,7 @@ export const theme = createTheme({
         main: 'rgb(255 220 132)'
       },
       secondary: {
-        main: 'rgb(240 204 255)'
+        main: 'rgb(204 147 9)'
       }
     }
   })
