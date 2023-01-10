@@ -61,7 +61,7 @@ function App() {
         <ResponsiveAppBar />
         <Box
           sx={{
-            backgroundImage: `linear-gradient(0deg, rgb(255 244 216) 0%, ${theme.palette.primary.main} 100%)`,
+            backgroundImage: `linear-gradient(0deg, ${theme.palette.background.paper} 0%, ${theme.palette.primary.main} 100%)`,
             backgroundRepeat: 'no-repeat',
           }}>
           <Container id='body'>

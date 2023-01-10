@@ -13,10 +13,10 @@ export const theme = createTheme({
     },
     palette: {
       background: {
-        paper: 'rgb(255 248 231)',
+        paper: 'rgb(255 233 211)',
       },
       primary: {
-        main: 'rgb(255 220 132)'
+        main: 'rgb(255 181 93)  '
       },
       secondary: {
         main: 'rgb(204 147 9)'
