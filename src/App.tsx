@@ -9,10 +9,12 @@ import { useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
 import LoadingPage from "./components/LoadingPage"
 import { Contact } from "./pages/Contact"
+import { useTranslation } from "react-i18next"
 
 export const APP_BAR_HEIGHT = 80
 
 function App() {
+  const { t } = useTranslation()
 
   const [loading, setLoading] = useState(true);
 
@@ -25,11 +27,6 @@ function App() {
     }
     scrollToLocation()
   }, [location])
-
-  const imagesLoaded = () => {
-    setLoading(false)
-    scrollToLocation()
-  }
 
   // This is a dirty way to wait for images to load, there is no imageloaded callback on the image crossfade npm element which is used within the home page
   useEffect(() => {
@@ -65,11 +62,11 @@ function App() {
             backgroundRepeat: 'no-repeat',
           }}>
           <Container id='body'>
-            <Page title="Services" id="services">
+            <Page title={t("services")} id="services">
               <Services />
             </Page>
             <Divider />
-            <Page title="Contact" id="contact">
+            <Page title={t("contact")} id="contact">
               <Contact />
             </Page>
           </Container>

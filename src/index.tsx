@@ -18,6 +18,8 @@ import '@fontsource/caveat/400.css';
 import '@fontsource/caveat/500.css';
 import '@fontsource/caveat/700.css';
 
+import './i18n';
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
