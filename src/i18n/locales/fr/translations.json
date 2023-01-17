@@ -1,0 +1,28 @@
+{
+    "services": "Services",
+    "production": "Production",
+    "production-bullet-1": "Besoin de musique originale pour une publicité, un film ou un jeu vidéo?",
+    "production-bullet-2": "Besoin d'accompagnement musical à la hauteur pour ton prochain single?",
+    "production-bullet-3": "Cherches-tu un fou beat pour faire puncher tes bars?",
+
+    "production-body": "Tu es à la bonne place, P-Side Studio peut assurément s'occuper de toi. Nous avons une dizaine d'années d'expérience et ce au travers une multitude de différents styles. Nous écouterons tes besoins et maximiserons l'impact de tes ambitions créatrices à l'aide de notre technique méticuleuse",
+
+    "recording": "Enregistrement",
+    "recording-bullet-1": "Tu aimerais enregistrer toutes les pistes de ton prochain projet sans devoir déclarer faillite?",
+    "recording-bullet-2": "T'en as assez de te sentir prêssé en studio sachant bel et bien que chaque minute d'extra te coûte de précieux dollars?",
+    "recording-body": "Chez P-Side Studio, t'as pas besoin de te soucier de ta rapidité. À la place, concentre-toi sur la qualité. Avec notre tarif fixe, l'enregistrement pour avoir lieu en plusieurs sessions, et ce, sans coût additionnel.",
+
+    "mixing": "Mix / Mastering",
+    "mixing-bullet-1": "Tu as de la difficulté à obtenir un son \"pro\"?",
+    "mixing-bullet-2": "Besoin de peaufiner des petites imperfections auditives?",
+    "mixing-body": "Avec notre oreille attentive et notre souci incompaarable au détail, P-Side Studio s'engage à faire briller ta voix, rayonner tes cordes, et SLAP ta bass.",
+
+    "portfolio-action": "Écouter le portfolio",
+
+    "contact": "Contact",
+    "contact-consultation": "Pour céduler une consultation",
+
+    "portfolio-tooltip": "Écouter le portfolio",
+    "facebook-tooltip": "Suivre sur Facebook",
+    "email-tooltip": "Envoyer un courriel"
+}

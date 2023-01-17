@@ -8,18 +8,21 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import { ReactComponent as SiteLogo } from '../icons/P-Side-Studio-Logo.svg';
 import { Link } from "react-router-dom"
-import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, SwipeableDrawer } from '@mui/material';
+import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, MenuItem, Select, SwipeableDrawer } from '@mui/material';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
-import InfoIcon from '@mui/icons-material/Info';
 import PersonIcon from '@mui/icons-material/Person';
 import { APP_BAR_HEIGHT } from '../App'
-
-const pages = [
-  { title: 'Services', url: 'services', icon: <LibraryMusicIcon /> },
-  { title: 'Contact', url: 'contact', icon: <PersonIcon /> },
-]
+import { useTranslation } from 'react-i18next';
 
 function ResponsiveAppBar() {
+
+  const { t, i18n } = useTranslation()
+
+  const pages = [
+    { title: t("services"), url: 'services', icon: <LibraryMusicIcon /> },
+    { title: t("contact"), url: 'contact', icon: <PersonIcon /> },
+  ]
+
   const [drawerOpen, setDrawerOpen] = React.useState<boolean>(false);
 
   const toggleDrawer =
@@ -33,7 +36,6 @@ function ResponsiveAppBar() {
         ) {
           return;
         }
-
         setDrawerOpen(open);
       };
 
@@ -59,6 +61,22 @@ function ResponsiveAppBar() {
       </List>
     </Box>
   );
+
+  const localeSelect = () => (
+    <Select
+      sx={{ width: 100 }}
+      onFocus={(e) => e.currentTarget.blur()}
+      disableUnderline
+      variant="standard"
+      defaultValue={'en'}
+      onChange={(e) =>
+        i18n.changeLanguage(e.target.value)
+      }
+    >
+      <MenuItem value={'en'}>English</MenuItem>
+      <MenuItem value={'fr'}>Français</MenuItem>
+    </Select>
+  )
 
   const siteLogoComponent = <SiteLogo width={65} height={65} />
 
@@ -94,7 +112,7 @@ function ResponsiveAppBar() {
             </Box>
 
             {/* Mobile Layout */}
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <Box sx={{ width: 100, flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
                 size="large"
                 onClick={toggleDrawer(true)}
@@ -103,10 +121,12 @@ function ResponsiveAppBar() {
                 <MenuIcon />
               </IconButton>
             </Box>
-            <Button component={Link} to='home' sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' }, mr: 1, pt: 1.1, pb: 0.6 }}>
+            <Button component={Link} to='home' sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, mr: 1, pt: 1.1, pb: 0.6 }}>
               {siteLogoComponent}
             </Button>
-            <Box sx={{ mr: 4, flexGrow: 1, display: { xs: 'flex', md: 'none' } }} />
+            <Box sx={{ flexGrow: 0 }}>
+              {localeSelect()}
+            </Box>
           </Toolbar>
         </Container>
       </AppBar>

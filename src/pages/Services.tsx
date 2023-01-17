@@ -1,19 +1,21 @@
 import { Box, Card, CardActions, CardContent, CardMedia, List, ListItem, ListItemIcon, Typography, Button, useTheme } from "@mui/material"
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
+import { useTranslation } from "react-i18next";
 
 export function Services() {
+  const { t } = useTranslation()
   const productionBullets = [
-    'Need original music for a commercial, movie or video game?',
-    'Need to shine musical light on the incredible lyrics that you wrote?',
-    'Looking for a tailor-made beat to bump with those flaming hot bars?',
+    t("production-bullet-1"),
+    t("production-bullet-2"),
+    t("production-bullet-3"),
   ]
   const recordingBullets = [
-    'Trying to lay down all the tracks for your next single without breaking the bank?',
-    'Tired of feeling rushed when in the studio, knowing every extra minute costs you precious funds?',
+    t("recording-bullet-1"),
+    t("recording-bullet-2"),
   ]
   const mixingBullets = [
-    'Having trouble nailing that professionnal sound?',
-    'Need help polishing off some rough spots?',
+    t("mixing-bullet-1"),
+    t("mixing-bullet-2"),
   ]
   const theme = useTheme()
   return (
@@ -23,7 +25,7 @@ export function Services() {
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
           <CardContent sx={{ flex: '1 0 auto' }}>
             <Typography mb={2} component="div" variant="h3">
-              Production
+              {t("production")}
             </Typography>
             <List sx={{ mb: 2 }}>
               {productionBullets.map((bullet) =>
@@ -38,11 +40,11 @@ export function Services() {
               )}
             </List>
             <Typography variant="body1" mb={2}>
-              Look no further, <b>P-Side Studio</b> has got you covered. We have countless years of experience in a plethora of different genres. We will listen to your needs and help amplify the impact of your creative ambitions through our meticulous production techniques.
+              {t("production-body")}
             </Typography>
           </CardContent>
           <CardActions>
-            <Button href="/portfolio" target="_blank" color='secondary' size="large">Listen to portfolio</Button>
+            <Button href="/portfolio" target="_blank" color='secondary' size="large">{t("portfolio-action")}</Button>
           </CardActions>
         </Box>
         <CardMedia
@@ -63,7 +65,7 @@ export function Services() {
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
           <CardContent sx={{ flex: '1 0 auto' }}>
             <Typography mb={2} component="div" variant="h3">
-              Recording
+              {t("recording")}
             </Typography>
             <List sx={{ mb: 2 }}>
               {recordingBullets.map((bullet) =>
@@ -78,12 +80,11 @@ export function Services() {
               )}
             </List>
             <Typography variant="body1" mb={2}>
-              Over at <b>P-Side Studio</b>, you won't need to worry about doing things quickly. Instead, worry about doing things right.
-              With our flat rate, recording can take place throughout the span of multiple sessions at no extra cost.
+              {t("recording-body")}
             </Typography>
           </CardContent>
           <CardActions>
-            <Button href="/portfolio" target="_blank" color='secondary' size="large">Listen to portfolio</Button>
+            <Button href="/portfolio" target="_blank" color='secondary' size="large">{t("portfolio-action")}</Button>
           </CardActions>
         </Box>
       </Card>
@@ -92,7 +93,7 @@ export function Services() {
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
           <CardContent sx={{ flex: '1 0 auto' }}>
             <Typography mb={2} component="div" variant="h3">
-              Mixing / Mastering
+              {t("mixing")}
             </Typography>
             <List sx={{ mb: 2 }}>
               {mixingBullets.map((bullet) =>
@@ -107,11 +108,11 @@ export function Services() {
               )}
             </List>
             <Typography variant="body1" mb={2}>
-            With our trained ear and unmatched attention to detail, <b>P-Side Studio</b> is sure to make your voice shine, your strings radiate, and your bass SLAP.
+              {t("mixing-body")}
             </Typography>
           </CardContent>
           <CardActions>
-            <Button href="/portfolio" target="_blank" color='secondary' size="large">Listen to portfolio</Button>
+            <Button href="/portfolio" target="_blank" color='secondary' size="large">{t("portfolio-action")}</Button>
           </CardActions>
         </Box>
         <CardMedia

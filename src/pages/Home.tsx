@@ -14,17 +14,19 @@ import { useInView } from "react-intersection-observer";
 import { ImageCrossFader } from "../components/ImageCrossFader";
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import { useTranslation } from "react-i18next"
 
 type HomeProps = {
   id: string,
 };
 
 export function Home({ id }: HomeProps) {
+  const { t } = useTranslation()
 
   const socials = [
-    { name: 'Listen to portfolio', icon: <LibraryMusicIcon />, link: '/portfolio' },
-    { name: 'Follow on Facebook', icon: <BsFacebook />, link: 'https://www.facebook.com/psidestudiomtl' },
-    { name: 'Send an email', icon: <MailOutlineIcon />, link: 'mailto:studio@pside.ca' },
+    { name: t('portfolio-tooltip'), icon: <LibraryMusicIcon />, link: '/portfolio' },
+    { name: t('facebook-tooltip'), icon: <BsFacebook />, link: 'https://www.facebook.com/psidestudiomtl' },
+    { name: t('email-tooltip'), icon: <MailOutlineIcon />, link: 'mailto:studio@pside.ca' },
   ]
 
   const [showSocialButtons, setShowSocialButtons] = React.useState<boolean>(false);

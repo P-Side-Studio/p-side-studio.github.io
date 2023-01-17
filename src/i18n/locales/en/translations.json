@@ -1,0 +1,29 @@
+{
+    "services": "Services",
+    "production": "Production",
+    "production-bullet-1": "Need original music for a commercial, movie or video game?",
+    "production-bullet-2": "Need to shine musical light on the incredible lyrics that you wrote?",
+    "production-bullet-3": "Looking for a tailor-made beat to bump with those flaming hot bars?",
+
+    "production-body": "Look no further, P-Side Studio has got you covered. We have countless years of experience in a plethora of different genres. We will listen to your needs and help amplify the impact of your creative ambitions through our meticulous production techniques.",
+
+    "recording": "Recording",
+    "recording-bullet-1": "Trying to lay down all the tracks for your next single without breaking the bank?",
+    "recording-bullet-2": "Tired of feeling rushed when in the studio, knowing every extra minute costs you precious funds?",
+    "recording-body": "Over at P-Side Studio, you won't need to worry about doing things quickly. Instead, worry about doing things right. With our flat rate, recording can take place throughout the span of multiple sessions at no extra cost.",
+
+    "mixing": "Mixing / Mastering",
+    "mixing-bullet-1": "Having trouble nailing that professionnal sound?",
+    "mixing-bullet-2": "Need help polishing off some rough spots?'",
+    "mixing-body": "With our trained ear and unmatched attention to detail, P-Side Studio is sure to make your voice shine, your strings radiate, and your bass SLAP.",
+
+    "portfolio-action": "Listen to portfolio",
+
+    "contact": "Contact",
+    "contact-consultation": "To book a consultation",
+
+    "portfolio-tooltip": "Listen to portfolio",
+    "facebook-tooltip": "Follow on Facebook",
+    "email-tooltip": "Send an email"
+
+}
