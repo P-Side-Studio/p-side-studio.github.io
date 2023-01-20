@@ -63,7 +63,7 @@ export function Home({ id }: HomeProps) {
           width='100%'
           sx={{ backgroundColor: "rgba(0, 0, 0, 0.80)" }}
           style={{
-            height: `calc(100dvh - ${APP_BAR_HEIGHT}px)`,
+            height: `calc(${window.innerHeight}px - ${APP_BAR_HEIGHT}px)`,
           }}>
           <Fade in timeout={1500} onEntering={() => setShowSocialButtons(true)}>
             <Box ref={logoRef} width='80%' maxWidth={500} height='60%'>
