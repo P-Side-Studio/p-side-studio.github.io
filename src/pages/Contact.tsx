@@ -15,8 +15,11 @@ export function Contact() {
         <IconButton href={"mailto:" + contactEmail}>
           <MailOutlineIcon fontSize="large" />
         </IconButton>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography mb={4} gutterBottom variant="h5" component="div">
           {contactEmail}
+        </Typography>
+        <Typography gutterBottom variant="subtitle1" color="text.secondary" component="div">
+          {t("contact-address")}
         </Typography>
       </Box>
     </Container>
